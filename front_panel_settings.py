@@ -76,7 +76,7 @@ class FrontPanelSettings(object):
         error = {}
         tab_data = {'BLACS settings':{}}
         try:
-            saved_ct = ConnectionTable(self.settings_path, logging_prefix='BLACS')
+            saved_ct = ConnectionTable(self.settings_path, logging_prefix='BLACS', exceptions_in_thread=True)
             ct_match,error = self.connection_table.compare_to(saved_ct)
             
             with h5py.File(self.settings_path,'r') as hdf5_file:
@@ -206,10 +206,7 @@ class FrontPanelSettings(object):
         
         # iterate over all tabs
         for device_name,tab in self.tablist.items():
-            tab_data[device_name] = {'front_panel':tab.settings['front_panel_settings'],
-                                     'save_data':tab.get_save_data() if hasattr(tab,'get_save_data') else {}
-                                  }
-            tab_data[device_name]['save_data'].update(tab.get_builtin_save_data())
+            tab_data[device_name] = {'front_panel':tab.settings['front_panel_settings'], 'save_data': tab.get_all_save_data()}
             
             # Find the notebook the tab is in
             #            
