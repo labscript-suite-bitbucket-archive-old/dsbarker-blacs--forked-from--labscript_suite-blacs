@@ -284,23 +284,6 @@ QToolButton:hover:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
-                    <widget class="QPushButton" name="queue_clear_button">
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="toolTip">
-                      <string>Clear queue of all shots</string>
-                     </property>
-                     <property name="text">
-                      <string>Clear</string>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="../../../../usr/local/lib/python2.7/dist-packages/qtutils/icons/icons.qrc">
-                       <normaloff>:/qtutils/fugue/bin-metal-full.png</normaloff>:/qtutils/fugue/bin-metal-full.png</iconset>
-                     </property>
-                    </widget>
-                   </item>
                   </layout>
                  </item>
                 </layout>
@@ -391,6 +374,23 @@ QToolButton:hover:checked {
                 <property name="icon">
                  <iconset resource="../../../../usr/local/lib/python2.7/dist-packages/qtutils/icons/icons.qrc">
                   <normaloff>:/qtutils/fugue/minus.png</normaloff>:/qtutils/fugue/minus.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="queue_clear_button">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>Clear queue of all shots</string>
+                </property>
+                <property name="text">
+                 <string>Clear</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../../../usr/local/lib/python2.7/dist-packages/qtutils/icons/icons.qrc">
+                  <normaloff>:/qtutils/fugue/bin-metal-full.png</normaloff>:/qtutils/fugue/bin-metal-full.png</iconset>
                 </property>
                </widget>
               </item>
@@ -517,7 +517,7 @@ QToolButton:hover:checked {
             <item row="2" column="1">
              <layout class="QVBoxLayout" name="queue_status_verticalLayout">
               <property name="spacing">
-               <number>0</number>
+               <number>3</number>
               </property>
               <property name="topMargin">
                <number>0</number>
